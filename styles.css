@@ -54,9 +54,9 @@ hr{
 }
 
 .nav-btn {
-    font-size: 1rem;
+    font-size: .8rem;
     background-color: #e63946;
-    padding: 10px 20px;
+    padding: 7px 14px;
     border: none;
     border-radius: 5px;
     color: white;
@@ -107,6 +107,11 @@ a{
 .navigation-text{
     display: inline;
     font-size: .9rem;
+    cursor: pointer;
+}
+
+.navigation-section .navigation-text:hover{
+    color: #e63946;
 }
 
 /*dropdown styling */
@@ -166,6 +171,10 @@ a{
     background-color: #fff;
     margin: 5px;
     border-radius: 5px;
+}
+
+.hidden-nav .hidden-navigation-text:hover{
+    color:#e63946;
 }
 
 /* scrollbar for the hidden-nav */
@@ -564,7 +573,7 @@ a{
 }
 
 .footer .footer-1 .footer-inner i{
-    margin: auto 10px;
+    margin: auto 5px;
 }
 
 .copyrights-section{
@@ -758,6 +767,122 @@ a{
     text-align: justify;
 }
 
+/* admission-section and administration page combined */
+
+.admission-section{
+    padding: 50px;
+}
+
+.admission-section .admission-section-heading{
+    font-size: 2rem;
+}
+
+.admission-section hr{
+    width: 60px;
+    background-color: #e63946;
+    height: 4px;
+    margin-bottom: 40px;
+}
+
+.admission-section .admission-section-inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.admission-section .admission-section-inner .admission-section-left{
+    width: 65%;
+}
+
+.admission-section .admission-section-inner .admission-section-right{
+    width: 30%;
+}
+
+.admission-section .admission-section-inner .admission-section-content{
+    text-align: justify;
+}
+
+.admission-section .admission-section-inner .admission-section-inner-heading{
+    font-size: 1.5rem;
+    margin: 30px auto
+}
+
+.admission-section .admission-section-inner .admission-section-inner-heading a:hover{
+    color: #e63946;
+}
+
+.admission-section .admission-section-inner .admission-section-inner-heading i{
+    font-size: 1rem;
+}
+
+.admission-section .admission-section-inner .admission-section-left ul{
+    margin-left: 50px;
+}
+
+.admission-section .admission-section-inner .admission-section-right .admission-section-right-links{
+    color: #e63946;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.admission-section .admission-section-inner .admission-section-right .admission-section-right-links i{
+    color: #000;
+}
+
+.admission-section .admission-section-inner .admission-section-right div{
+    margin-left: 20px;
+}
+
+#admission-entrance-test-syllabus, #admission-important-exam-date, #admission-fee-structure, #administration-office-administration,
+#administration-assistant-professors, #administration-application-programmers, #administration-program-incharge, #administration-supporting-staffs{
+    display: none;
+}
+
+.admission-section table{
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.admission-section table tr td, .admission-section table tr th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+
+/* administration page alone */
+
+.administration-section-designation{
+    font-size: 1.5rem;
+    margin: 20px auto;
+}
+
+.administration-section-container{
+    display: flex;
+    align-items: center;
+}
+
+.administration-section-container img{
+    width: 175px;
+    height: 175px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.administration-section-container .administration-section-inner-container{
+    margin-left: 25px;
+}
+
+.administration-section-container .administration-section-inner-container .administration-section-name{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.administration-section-container .administration-section-inner-container .administration-section-description{
+    text-align: justify;
+}
+
+
 
 
 /* tablet view */
@@ -766,11 +891,6 @@ a{
 
     .main-logo {
         height: 70px;
-    }
-
-    .nav-btn {
-        font-size: .9rem;
-        padding: 8px 16px;
     }
     
     .search {
@@ -796,6 +916,11 @@ a{
         border: none;
     }
 
+    .apply-now .apply-now-content{
+        font-size: 1.2rem;
+        width: 65%;
+    }
+
     .cde-section .cde-section-left{
         width: 50%;
     }
@@ -807,6 +932,14 @@ a{
     .cde-section .cde-section-right{
         display: block;
         margin-top: 50px;
+    }
+
+    .footer{
+        flex-wrap: wrap;
+    }
+    
+    .footer .footer-1{
+        width: 50%;
     }
 }
 
@@ -830,13 +963,17 @@ a{
         align-items: center;
     }
 
-    .nav-btn {
-        font-size: .8rem;
-        padding: 7px 14px;
-    }
-
     .navigation-section .navigation-text{
         font-size: .8rem;
+    }
+
+    .navigation-section .dropdown-parent .dropdown-content a{
+        font-size: .8rem;
+    }
+
+    .dropdown-content {
+        width: 150px;
+        padding: 7px;
     }
     
     .search {
@@ -858,11 +995,15 @@ a{
     }
 
     .brochures-div{
-        height: 5.5rem;
+        height: 7rem;
     }
 
     .brochures-div .brochures-inner-div{
         flex-direction: column;
+    }
+
+    .brochures-div .brochures-inner-div div a{
+        margin: 0;
     }
     
     .brochures-div p{
@@ -878,7 +1019,7 @@ a{
         padding-bottom: 25px;
     }
     
-    .main-content-left-heading{
+    .main-content-left-heading, .cde-section .cde-section-left .cde-section-left-heading{
         font-size: 1.6rem;
         text-align: center;
     }
@@ -896,6 +1037,17 @@ a{
         text-align: center;
         padding: 15px;
     }
+
+    .apply-now{
+        text-align: justify;
+        justify-content: space-around;
+    }
+    
+    .apply-now .apply-now-content{
+        font-size: 1rem;
+        width: 65%;
+    }
+
 
     .cde-section{
         flex-direction: column;
@@ -930,8 +1082,18 @@ a{
     .details-section .details-inner-section .details-right-section{
         width: 100%;
     }
+
+    .footer{
+        flex-direction: column;
+    }
+    
+    .footer .footer-1{
+        width: 100%;
+    }
     
 }
+
+/* mobile view */
 
 @media screen and (max-width: 450px) {
 
@@ -951,6 +1113,10 @@ a{
     .hidden-nav{
         top: 11.8rem
     }
+
+    .hidden-nav .hidden-navigation-text{
+        font-size: .7rem;
+    }
     
     
     .main-content{
@@ -963,7 +1129,7 @@ a{
     }
 
     .main-content-right-inner-text{
-        font-size: .7rem;
+        font-size: .8.5rem;
     }
 
     .details-section .details-inner-section{
@@ -978,6 +1144,10 @@ a{
     
     .details-section .details-inner-section .details-right-section{
         width: 100%;
+    }
+
+    .apply-now .apply-now-content{
+        font-size: .8rem;
     }
     
 }
