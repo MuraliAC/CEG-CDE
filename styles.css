@@ -1000,6 +1000,7 @@ a{
 
     .brochures-div .brochures-inner-div{
         flex-direction: column;
+        text-align: center;
     }
 
     .brochures-div .brochures-inner-div div a{
