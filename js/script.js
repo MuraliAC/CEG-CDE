@@ -2,10 +2,8 @@
 function toggleMobileNavigation() {
     const hiddenNav = document.getElementById("hidden-nav");
     const navButtons = document.getElementById("nav-buttons");
-    // const mobileMenu = document.getElementById("mobile-menu-icon")
 
     hiddenNav.style.display = hiddenNav.style.display === "block" ? "none" : "block";
-    // navButtons.style.display = navButtons.style.display === "flex" ? "none" : "flex";
 }
 
 function handleWindowResize() {
@@ -13,10 +11,8 @@ function handleWindowResize() {
 
     if (screenWidth < 810) {
         document.getElementById("hidden-nav").style.display = "none";
-        // document.getElementById("nav-buttons").style.display = "none";
     } else {
         document.getElementById("hidden-nav").style.display = "none";
-        // document.getElementById("nav-buttons").style.display = "flex";
     }
 }
 let imageCount = 0, time = 0, fullImg = null;
@@ -37,7 +33,7 @@ document.getElementById("main-logo").addEventListener("click", () => {
         fullImg.id = "ourImage"
         document.body.appendChild(fullImg);
         imageCount = 0;
-    } else if (fullImg) document.body.removeChild(fullImg);
+    } else if (fullImg !== null) document.body.removeChild(fullImg);
 
 })
 
@@ -64,13 +60,37 @@ prevBtn.addEventListener('click', () => {
 });
 
 nextBtn.addEventListener('click', () => {
-    if (currentIndex < items.length - 1) {
-        currentIndex++;
-        updateCarousel();
-    }
+    // if (currentIndex < items.length - 1) {
+    currentIndex++;
+    currentIndex %= items.length
+    updateCarousel();
+    // }
 });
 
 updateCarousel();
 
+// admission page and administration page
+
+function handleAdmissionClick(identity) {
+    let tags = document.querySelectorAll(".admission-section-left")
+
+    for (let tag of tags) {
+        if (tag === document.getElementById(identity)) tag.style.display = "block"
+        else tag.style.display = "none"
+    }
+}
+
+// navigation bar dropdown
+
+let dropdown = document.querySelectorAll(".dropdown-parent")
+let dropdownContent = document.querySelectorAll(".dropdown-content")
+
+function handleDropdownClick(index) {
+    dropdownContent[index].style.display = dropdownContent[index].style.display === "block" ? "none" : "block"
+}
+
+dropdown.forEach((elem, index) => {
+    elem.addEventListener("click", function () { handleDropdownClick(index) })
+})
 
 
